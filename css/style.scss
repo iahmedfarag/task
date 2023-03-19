@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+
+// container
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+}
+section {
+  margin: 50px 0;
+  .container {
+    .header {
+      h2 {
+        margin-bottom: 5px;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+    }
+    .slider {
+      .btns {
+        position: relative;
+        ul {
+          display: flex;
+          justify-content: space-between;
+          .btn {
+            border: 1px solid aqua;
+            background-color: rgb(255, 255, 255);
+            padding: 20px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.1s;
+            position: relative;
+            overflow: hidden;
+
+            .overlay {
+              position: absolute;
+              top: 0;
+              right: -100%;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 255, 0.443);
+              border-radius: 25px;
+              transition: 0.5s;
+              &.active {
+                right: 0;
+              }
+            }
+          }
+        }
+
+        .line {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          height: 1px;
+          width: 0;
+          background-color: red;
+          z-index: -22;
+          transition: 0.2s;
+        }
+      }
+      .slide {
+        margin-top: 50px;
+        background-color: aquamarine;
+        display: flex;
+        align-items: center;
+        .number {
+          padding: 40px 60px;
+          background-color: aqua;
+          font-size: 40px;
+        }
+        .content {
+          margin-right: 40px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+section {
+  .slider2 {
+    display: flex;
+
+    .box {
+      width: 15%;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 50px 10px;
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: 0.5s;
+      min-height: 300px;
+      &:hover {
+        opacity: 0.7;
+      }
+      h2 {
+        margin-bottom: 10px;
+      }
+      p {
+        margin-bottom: 10px;
+        display: none;
+      }
+      button {
+        width: fit-content;
+      }
+
+      &.active {
+        width: 40%;
+        p {
+          display: block;
+        }
+      }
+    }
+  }
+}
